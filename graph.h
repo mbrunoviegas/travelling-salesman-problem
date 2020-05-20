@@ -55,6 +55,31 @@ namespace Graph
             }
         }
     }
+    
+    double twoPointsDistanceManual(int i, int j, int *x1, int *y1)
+    {
+        double distance = sqrt(pow((x1[i] - x1[j]), 2) + pow((y1[i] - y1[j]), 2));
+        return distance;
+    }
+
+    void fillMatrixManual(int **matrix, int n)
+    {
+        int *x1, *y1;
+        x1 = new int[n];
+        y1 = new int[n];
+        for (int i = 0; i < n; i++)
+        {
+            cin >> x1[i] >> y1[i];
+        }
+
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                matrix[i][j] = twoPointsDistance(i, j, x1, y1);
+            }
+        }
+    }
 
     void printMatrix(int **matrix, int n)
     {
