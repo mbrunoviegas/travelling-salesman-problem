@@ -11,5 +11,5 @@
   - Os valores de localicalização x e y de cada cidade são estáticos e você pode encontrá-los no graph.h. 
   - Para rodar os programas, basta executar as seguintes linhas de comando no terminal, onde o arquivo estiver salvo.
 
-            - **g++ NomeDoArquivo.cpp**
-	        - **.\a.exe**
+            - g++ NomeDoArquivo.cpp
+	        - .\a.exe
