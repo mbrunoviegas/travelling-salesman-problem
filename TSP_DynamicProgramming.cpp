@@ -25,14 +25,14 @@ struct
 } typedef Path;
 
 int **matrix;
-int n;
+int n = 1;
 
 Path tsdp(int actual, int visited, vector<vector<Path>> &cities)
 {
     Path travellingPath;
     travellingPath.cost = INT_MAX;
 
-    //Nesse primeiro if, verificamos se visited é igual 2^(n-1) o que significa que todos os vertices foram visitados
+    //Nesse primeiro if, verificamos se visited é igual 2^(n) - 1 o que significa que todos os vertices foram visitados
     //Por exemplo, 4 cidades visitadas seria 1111
     if (visited == ((1 << n) - 1))
     {
@@ -84,29 +84,31 @@ int main()
 {
     //Os valores de n vao ate 21
     //a partir de 22 na maquina que testamos ja estoura a memoria
-    cin >> n;
-
-    matrix = new int *[n];
-    initMatrix(matrix, n);
-    fillMatrix(matrix, n, x, y);
-
-    Path mPath;
-    mPath.cost = INT_MAX;
-    vector<vector<Path>> cities(n);
-
-    //Aqui eu crio uma matriz n x 2^(n-1), que pra indexar as cidades visitadas
-    for (auto &path : cities)
+    while (n < 22)
     {
-        path = vector<Path>((1 << n) - 1, mPath);
+        matrix = new int *[n];
+        initMatrix(matrix, n);
+        fillMatrix(matrix, n, x, y);
+
+        Path mPath;
+        mPath.cost = INT_MAX;
+        vector<vector<Path>> cities(n);
+
+        //Aqui eu crio uma matriz n x 2^(n) - 1, que pra indexar as cidades visitadas
+        for (auto &path : cities)
+        {
+            path = vector<Path>((1 << n) - 1, mPath);
+        }
+
+        Path finalStats = tsdp(0, 1, cities);
+
+        cout << finalStats.cost << endl;
+        for (int i = finalStats.path.size() - 1; i >= 0; i--)
+            cout << finalStats.path.at(i) << " ";
+
+        cout << endl;
+        n++;
     }
-
-    Path finalStats = tsdp(0, 1, cities);
-
-    cout << finalStats.cost << endl;
-    for (int i = finalStats.path.size() - 1; i >= 0; i--)
-        cout << finalStats.path.at(i) << " ";
-
-    cout << endl;
 
     return 0;
 }
