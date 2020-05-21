@@ -3,7 +3,7 @@
 
 - Os arquivos de teste estão no padrão **TSP_NomeDoParadigma_Test.cpp**, são eles que mostram o custo médio de 10 execuções para cada valor de **n**.
 - Os arquivos de oficiais estão no padrão **TSP_NomeDoParadigma.cpp**, eles irão mostrar apenas o custo total e o caminho, executando apenas uma vez o agoritmo para cada valor de **n**.
-- As saídas dos arquivos de teste, você pode encontrar nos arquivo **saida<IniciaisDoParadigma>.txt**. Elas mostram o custo total, o caminho e o tempo médio de 10 execuções para cada valor de **n**.
+- As saídas dos arquivos de teste, você pode encontrar nos arquivo **saida(IniciaisDoParadigma).txt**. Elas mostram o custo total, o caminho e o tempo médio de 10 execuções para cada valor de **n**.
 
 # Executar
 
