@@ -9,5 +9,6 @@
   - Os valores de **n**, estão estáticos indo de 1 ao valor que cada paradigma suporta.
   - Os valores de localicalização x e y de cada cidade são estáticos e você pode encontrá-los no graph.h. 
   - Para executar basta executar as seguintes linhas de comando no terminal onde o arquivo estiver salvo
+  
             - **g++ NomeDoArquivo.cpp**
 	        - **.\a.exe**
